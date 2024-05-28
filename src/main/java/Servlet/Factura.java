@@ -29,7 +29,29 @@ public class Factura extends HttpServlet {
         out.println("<meta charset='UTF-8'>");
         out.println("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
         out.println("<title>Factura</title>");
-
+        //Estilos css
+        out.println("<style>");
+        out.println("body {");
+        out.println("    font-family: Arial, sans-serif;");
+        out.println("}");
+        out.println("h1 {");
+        out.println("    text-align: center;");
+        out.println("}");
+        out.println("table {");
+        out.println("    width: 100%;");
+        out.println("    border-collapse: collapse;");
+        out.println("}");
+        out.println("table, th, td {");
+        out.println("    border: 1px solid black;");
+        out.println("}");
+        out.println("th, td {");
+        out.println("    padding: 10px;");
+        out.println("    text-align: left;");
+        out.println("}");
+        out.println("tfoot td {");
+        out.println("    font-weight: bold;");
+        out.println("}");
+        out.println("</style>");
         out.println("</head>");
         out.println("<body>");
         out.println("<h1>Factura</h1>");
@@ -68,10 +90,10 @@ public class Factura extends HttpServlet {
         out.println("<td colspan='3'>Subtotal:</td>");
         out.println("<td>$" + String.format("%.2f", total) + "</td>");
         out.println("</tr>");
-        double iva = total * 0.12;
+        double iva = total * 0.15;
         double totalConIVA = total + iva;
         out.println("<tr>");
-        out.println("<td colspan='3'>IVA (12%):</td>");
+        out.println("<td colspan='3'>IVA (15%):</td>");
         out.println("<td>$" +  String.format("%.2f", iva) + "</td>");
         out.println("</tr>");
         out.println("<tr>");
@@ -79,6 +101,13 @@ public class Factura extends HttpServlet {
         out.println("<td>$" + String.format("%.2f", totalConIVA) + "</td>");
         out.println("</tr>");
         out.println("</table>");
+        out.println("<div style='text-align: center; margin-top: 20px;'>");
+        out.println("<a href='index.html' style='text-decoration: none;'>");
+        out.println("<button style='background-color: #4CAF50; color: blue; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border: none; border-radius: 4px;'>");
+        out.println("Volver al Inicio");
+        out.println("</button>");
+        out.println("</a>");
+        out.println("</div>");
         out.println("</tbody>");
         out.println("</body>");
         out.println("</html>");
