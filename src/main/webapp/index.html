@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito</title>
+</head>
+<body>
+<div class="container">
+    <h1>Carrito de Compras</h1>
+
+    <h2>Ingrese el Producto que desea comprar</h2>
+    <form action="Carrito" method="post">
+        <label for="nom">Nombre del Producto:</label>
+        <input type="text" id="nom" name="nom" required><br>
+        <label for="valoruni">Valor Unitario:</label>
+        <input type="text" id="valoruni" name="valoruni" step="0.01" required><br>
+        <label for="cant">Cantidad:</label>
+        <input type="text" id="cant" name="cant" required><br>
+        <button type="submit">Agregar al Carrito</button>
+    </form>
+</div>
+
+</body>
+</html>
